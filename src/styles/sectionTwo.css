@@ -1,0 +1,288 @@
+:root {
+    --mainColor: rgb(231, 228, 228);
+
+    --mainText: hsl(0, 0%, 0%);
+    --secondaryText: hsl(207, 7%, 32%);
+    --secondaryColor: #fff;
+    --mainFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --borderColor: rgb(101, 107, 107);
+    --borderColor2: rgb(91, 185, 185);
+    --borderColor3: rgb(31, 39, 39);
+
+    --bgShadow: rgb(238, 188, 123);
+}
+#root{
+    overflow-x:hidden
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    color: var(--mainText)
+}
+
+p,
+li,
+span,
+label,
+input,
+textarea {
+    color: var(--secondaryText)
+}
+
+.first {
+    background: var(--mainColor);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border: 1px solid var(--borderColor);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+
+}
+
+@media (min-width: 600px) {
+    .mainContainer {
+        width: 80%;
+        align-self: center;
+
+    }
+
+}
+
+.mainContainer {
+
+    border-radius: 0.3rem;
+    /* overflow:hidden; */
+
+    border: 1px solid var(--borderColor);
+    margin: 10px;
+    display: block;
+    transform: translateY(1rem);
+    box-shadow: 0 0 7px #555;
+
+
+}
+
+.head {
+    background: rgb(231, 228, 228);
+    border-bottom: 1px solid var(--borderColor);
+
+}
+
+.content {
+    width: 100%;
+
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.relatively {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper h5 {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 0.8rem;
+    text-transform: capitalize;
+}
+
+.img {
+    place-self: center;
+    margin-top: 2rem;
+    ;
+    height: 10rem;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+}
+
+.wrap {
+    position: relative;
+    display: flex;
+}
+
+.about {
+    position: relative;
+    display: flex;
+    border: 2px solid var(--borderColor2);
+    width: 17rem;
+    height: 11.7rem;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 2rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(6px);
+    z-index: 44;
+    transform: translateY(53%);
+}
+
+.about p {
+    color: black;
+
+}
+
+.previewShadow {
+    background: var(--bgShadow);
+    width: 17rem;
+    min-height: 11.7rem;
+    transform: translate(-5%, -50%)
+}
+
+.abs {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--borderColor2);
+    border-radius: 50%;
+    background: white;
+    z-index: 99
+}
+
+.abs:first-child {
+    top: -4px;
+    left: -4px
+}
+
+.abs:nth-child(2) {
+    right: -4px;
+    top: -4px
+}
+
+.abs:nth-child(3) {
+    bottom: -4px;
+    right: -4px
+}
+
+.abs:nth-child(4) {
+    left: -4px;
+    bottom: -4px;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 2px #555;
+}
+
+.themebtn {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid var(--borderColor3);
+    transition: transform 300ms ease;
+
+}
+
+.themebtn:hover,
+.themebtn:active,
+.themebtn:focus-within {
+    transform: scale(1.1);
+    cursor: pointer
+}
+
+.darkgreen {
+    background: rgb(39, 117, 39);
+    ;
+}
+
+.purple {
+    background: rgb(94, 2, 94)
+}
+
+.blue {
+    background: rgb(15, 5, 106);
+}
+
+.red {
+    background: rgb(225, 98, 98);
+}
+
+.yellow {
+    background: rgb(255, 238, 0);
+
+}
+
+.green {
+    background: rgb(15, 202, 15);
+}
+
+.aboutSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr))
+}
+
+.aboutSection .image {
+    width: 30rem;
+    object-fit: cover;
+    height: 270px;
+}
+.skills{
+    background: var(--bgShadow);
+    padding: 1rem
+}
+.skills li{
+    color: var(--mainText);
+
+
+}
+.third{
+    background: var(--mainColor);
+
+}
+.card {
+    background: var(--secondaryColor);
+    display: flex;
+flex-direction: column;
+justify-content:center;
+align-items: center;
+    box-shadow: 0 0 7px #555;
+    margin:2rem 0.5rem 0;
+
+}
+.card h1{
+    font-size:1.2rem;
+    font-weight:bold;
+    margin-bottom: 1rem;
+    margin-top: 0.8rem;
+    letter-spacing:0px;
+
+}
+.cardImg{
+    width:100%;
+}
+.third img{
+    width:100%;
+    aspect-ratio: 1 / 0.9;
+    object-fit: cover
+
+}
+.thirdWrapper{
+    max-width:950px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,300px);
+        justify-content:center;
+        gap:0.5rem;
+        margin:auto;
+        padding-top: 3rem;
+}

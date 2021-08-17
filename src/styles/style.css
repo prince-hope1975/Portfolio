@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+:root {
+    font-size: 15px;
+    font-family: 'OpenSans';
+    --text-primary: #ffffff;
+    --text-secondary: hsla(0, 16%, 89%, 0.443);
+    --bg-primary: #232324;
+    --bg-secondary: #221507b2;
+    --transition-speed: 600ms;
+    --bg-color: rgb(37, 35, 35);
+    --type-speed: 6s;
+    --type-writer: 25;
+    /* colours  */
+
+
+    --gray0: hsl(49, 37%, 94%);
+    --gray1: hsl(49, 37%, 84%);
+    --gray05: rgb(218, 208, 208);
+    --gray2: hsl(49, 37%, 74%);
+    --gray3: hsl(190, 17%, 10%);
+
+    --gray4: hsl(400, 40%, 4%);
+    --gray5: hsl(9, 7%, 20%);
+    --gray6: hsl(7, 11%, 15%);
+    --blue: hsl(192, 100%, 32%);
+    --purple: hsl(266, 81%, 45%);
+    --purple2: hsl(241, 66%, 28%);
+    --purple3: hsl(211, 42%, 51%);
+    --yellow: hsl(56, 100%, 70%);
+    --yellow2: hsl(56, 98%, 34%);
+    --ash: hsla(0, 16%, 89%, 0.443);
+    --brown: hsla(31, 66%, 8%, 0.698);
+    /* other variables */
+    /* --text-primary: #ffffff;
+     --text-secondary: hsla(0, 16%, 89%, 0.443);
+     --bg-primary:#232324;
+     --bg-secondary: #221507b2; */
+}
+
+.light {
+    --bg: var(--gray0);
+    --bg-nav: linear-gradient(to right, var(--gray1), var(--gray3));
+    --bg-dropdown: var(--gray0);
+    --text: var(--gray6);
+    --border-color: var(--blue);
+    --bg-solar: var(--yellow);
+
+    --text-primary: var(--gray5);
+    --text-secondary: var(--brown);
+    --bg-primary: var(--gray0);
+    --bg-secondary: var(--gray1);
+
+    --svg1: var(var(--border-color));
+    --svg2: var(--gray3);
+    --card: var(--gray0);
+    --shadow: none;
+}
+
+.dark {
+    --shadow:3px 2px 2px #333;
+    --bg: var(--gray5);
+    --bg-nav: linear-gradient(to right, var(--gray3), var(--gray6));
+    --bg-dropdown: var(--gray6);
+    --text: var(--gray0);
+    --border-color: var(--purple);
+    --bg-solar: var(--blue);
+
+    --text-primary: #ffffff;
+    --text-secondary: var(--ash);
+    --bg-primary: var(--gray5);
+    --bg-secondary: var(--gray4);
+    --card: #333;
+
+
+    --svg1: var(--gray6);
+    --svg2: var(--gray2);
+
+}
+
+
+.solarize {
+    --gray0: hsl(66, 100%, 92%);
+    --gray1: hsl(61, 74%, 89%);
+    --gray2: hsl(93, 90%, 74%);
+    --gray3: hsl(101, 63%, 48%);
+    --gray4: hsl(143, 45%, 45%);
+    --gray5: hsl(192, 100%, 20%);
+    --gray6: hsl(192, 100%, 15%);
+}
+
+.h1, h1 {
+    font-size: clamp(1rem, 3vw + 1rem, 4rem);
+    position: relative;
+    display: flex;
+    font-family: "Source Code Pro", monospace;
+
+}
+.h1 > *{
+    color:var(--text-primary)
+
+}
+
+
+body {
+    overflow-X: hidden;
+    padding: 0;
+    margin: 0;
+    color: black;
+    /* background-color: white; */
+    background: var(--bg);
+
+
+}
+
+.section {
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    color: var(--text);
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+
+
+.fa-primary,
+.fa-secondary {
+    transition: var(--transition-speed);
+}
+
+/* the animation Ends Here */
+.navbar {
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 600ms ease;
+    box-shadow: 2px 2px 5px black;
+
+
+
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-item {
+    width: 100%;
+
+}
+
+.nav-item:last-child {
+    margin-top: auto;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    filter: grayscale(50%) opacity(0.8);
+    transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+
+
+.nav-link svg {
+    /* fill:var(--text-secondary); */
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+/* this code is what i used to animate the nav bar arrow head */
+.logo svg {
+    transform: rotate(0deg);
+    transition: var(--transition-speed);
+}
+
+.logo-text {
+    display: inline;
+    position: absolute;
+    left: -999px;
+    transition: var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+    transform: rotate(-180deg);
+}
+
+
+/* this code targets the svg images that was gotten from font awesome
+when referencing svg's always take note of the classes and the specific type of svg's being reference */
+
+
+/* This media query is for smaller screens */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+        flex-direction: row;
+        overflow-x: scroll;
+
+
+        ;
+    }
+
+    #solarIcon {
+        opacity: 1;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    .theme-icon {
+        display: inline;
+    }
+
+    main {
+        margin: 0;
+    }
+}
+#solarIcon {
+    opacity: 1;
+}
+
+/* this media query is for larger screens 
+you might be wondering ehy two media queries? the answer is simple:
+-The media query for larger screens contains styles which we don't want implemented at all on the small screens */
+@media only screen and (min-width:600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar:hover .link-text {
+        display: inline;
+    }
+
+    .navbar:hover #solarIcon {
+        opacity: 1;
+    }
+
+    .navbar:hover .logo svg {
+        margin-left: 11rem;
+    }
+
+    .navbar:hover .logo-text {
+        left: 0px;
+    }
+    main{
+        padding-left: 1rem
+    }
+
+}
+
+/* This part of the css is what is what controlsthe bottom icons  */
+
+
+
+/* targeting the navbar scroll event */
+.navbar::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+}
+
+.navbar::-webkit-scrollbar-track {
+    background: none;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+    background: hsl(256, 40%, 50%);
+}
+
+.subtitle {
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeIn 2s ease calc(var(--type-speed) + 2s) forwards;
+
+}
+
+@keyframes typeWriter {
+    to {
+        left: 100%;
+
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    z-index: 9999;
+}
+
+@media screen and (min-width:600px) {
+
+    .h1::before,
+    .h1::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .h1::before {
+        background: var(--bg);
+        animation: typeWriter var(--type-speed) 1s steps(var(--type-writer)) forwards;
+
+
+    }
+
+    .h1::after {
+        width: 0.125em;
+        background: var(--text);
+        animation: typeWriter var(--type-speed) 1s steps(var(--type-writer)) forwards,
+            blink 750ms steps(var(--type-writer)) infinite;
+
+    }
+}
